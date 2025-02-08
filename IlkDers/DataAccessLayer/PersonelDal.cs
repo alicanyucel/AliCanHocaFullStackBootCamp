@@ -7,11 +7,12 @@ using System.Data.SqlClient;
 namespace IlkDers.DataAccessLayer
 {
     // burada crud operasyonlarını yapacağımız yer
+    //brans bizi yaktı.
     public class PersonelDal
     {
         //serverin localdeki adresi                       //sunucu adresi.................... //database............. //wimdoew authanticationn 
                                                                                                                      //şifre ve paralo girmeden
-        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-L6NJT48\\SQLEXPRESS;Initial Catalog=IlkDers;ıntegrated Security=True");
+        SqlConnection connection = new SqlConnection("Data Source=DESKTOP-L6NJT48\\SQLEXPRESS;Initial Catalog=IlkDers;Integrated Security=True");
                //geriye değer dondurmezse void olur
         public   void ConnectionKontrol()
         {
@@ -27,10 +28,7 @@ namespace IlkDers.DataAccessLayer
             // BEST PARACTİTSE OLARAK
             // ConnectionKontrol()
             // VEYA
-            if (connection.State == ConnectionState.Closed)
-            {
-                connection.Open();
-            }
+            ConnectionKontrol(); // BAĞLANTI KAPALIYSA BAĞLANTIYI AÇAN FONKSİYON
             // SqlCommand tipinden command adı altında bir nesne oluşturdum ve ornekledim
             // SqlCommand 2 tane parametre alır 1.sorgu 2. si bağlantı
             SqlCommand command = new SqlCommand("Select * from Personel",connection);
@@ -76,7 +74,7 @@ namespace IlkDers.DataAccessLayer
             //}
             ConnectionKontrol();
                                               // person tablosnun id değer parametre olarak @id değerine eşitse sil 
-            SqlCommand command = new SqlCommand("Delete from Person where id=@id",connection);
+            SqlCommand command = new SqlCommand("Delete from Personel where Id=@id",connection);
             command.Parameters.AddWithValue("@id",Id); //@id=id
             command.ExecuteNonQuery();//komutu calısıtrdım. sildim işlem bitti
             connection.Close(); //bağlantı işlem bitince yok edildi.
@@ -85,17 +83,18 @@ namespace IlkDers.DataAccessLayer
         // güncelleme işlemi
         public void Update(Personel personel)
         {
+            // bransı güncellemiyor
             ConnectionKontrol(); //bağlantıyı açan test eden metod
             //// 1.yol
             //string guncelleSorgu = "Update Person Set ad=@ad,soyad=@soyad,brans=@brans where id=@id";
             //SqlCommand cmd=new SqlCommand(guncelleSorgu,connection);
-            // 2. yol şu şekilde
-            SqlCommand cmd = new SqlCommand("Update Person Set ad=@ad,soyad=@soyad,brans=@brans where id=@id",connection);
+            // 2. yol şu şekilde ///                                                  bransı güncellemedi
+            SqlCommand cmd = new SqlCommand("Update Personel Set Ad=@ad,Soyad=@soyad,brans=@brans where Id=@id",connection);
             // dısardan geelcek olan @ad ,@soyad @id değerlerini personel.ad pesonel soyad p.ID ile set ediyorum
+            cmd.Parameters.AddWithValue("@id", personel.Id);
             cmd.Parameters.AddWithValue("@ad",personel.Ad);
             cmd.Parameters.AddWithValue("@soyad", personel.Soyad);
             cmd.Parameters.AddWithValue("@brans",personel.Brans);
-            cmd.Parameters.AddWithValue("@id",personel.Id);
             cmd.ExecuteNonQuery();// sorguyu calıstırdık güncelleme işlmi bitti
             connection.Close(); // yok ediyoruz
 
