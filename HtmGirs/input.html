@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <!--buraya meta tanım seylerini ve css seylerini js seylerini yazarsınız-->
+</head>
+
+<body>
+    <div class="container"></div>
+    <!-- div divider dan gelen sayfayı istediğimiz gibi bolmmize yarar-->
+    <div class="col-md-6"> <!-- normalde htmlde sayfalar 12 parçaya bolunur bana 6 parcalık bir alan ayır demiş oldum-->
+        <form>
+            <!--formlar kullanıcııdan veri almak anket yapmak brişeyler işsaretlemek için kullanılır--->
+            <div class="form-group"> <!--form grup classı form elemanlarını hizalar-->
+                <label for="firstName"><!-- label for ile firstname alanını işaretledim-->
+                    Ali Can
+                </label>
+                <input type="text" class="form-group" id="firstname">
+                <label for="lastName">Yücel</label>
+                <input type="text" class="form-group" id="lastName">
+            </div>
+            <div class="form-group">
+                <!-- acılabilir menuler için select kullanılır option olarak içine ekleriz-->
+                <label for="car">Araba seçiniz</label> <!-- tag /> kaaptılı<r-->
+                <select class="form-control" id="car">
+                    <option>BMW</option>
+                    <option>Audi</option>
+                    <option>Mercedes</option>
+                </select>
+            </div>
+            <!-- checkbox coklu secim yapmamıza yarar-->
+            <div class="form-check">
+                <label class="form-check-radio">Hobileriniz</label>
+                <input type="checkbox">Footboll
+                <input type="checkbox">Müzik
+                <input type="checkbox">Resim Yapmak <!-- 2 tane yapısı type checkbox olursa birden fazla secim yapmamızı sağlar 
+           type=radio olursa sadece tek bir secenek secmemizi sağlar-->
+            </div>
+            <div class="form-check">
+                <label class="form-check-radio">Hobileriniz</label>
+                <input type="radio" name="radio" class="form-check-radio">Kedi Sevmek
+                <input type="radio" name="radio" class="form-check-radio">Kopek Sevmek
+            </div>
+        </form>
+    </div>
+    <!--burayda govdeyi yazarsanız aslında butun her sey buradadır-->
+</body>
+
+</html>

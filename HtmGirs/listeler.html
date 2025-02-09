@@ -1,0 +1,53 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <td-layout-nav sidenavTitle="MyApp" logo="assets:logo" icon="ligature" color="primary">
+        <div td-toolbar-content>
+            Toolbar content
+        </div>
+        <td-layout-manage-list #{6:ref} [opened]="media.registerQuery('gt-sm') "
+                               [mode]="(media.registerQuery('gt-sm') "
+                               [sidenavWidth]="(media.registerQuery('gt-xs') ">
+            <mat-toolbar td-sidenav-content (click)="!media.query('gt-sm') && ref.close()">
+                Inner sidenav toolbar
+            </mat-toolbar>
+            <mat-nav-list td-sidenav-content>
+                Inner sidenav content
+            </mat-nav-list>
+            <div td-toolbar-content>
+                Inner toolbar for body
+            </div>
+            Body
+            <td-layout-footer-inner>
+                Footer within body
+            </td-layout-footer-inner>
+        </td-layout-manage-list>
+        <td-layout-footer>
+            Global fixed footer
+        </td-layout-footer>
+    </td-layout-nav>
+    <!-- listler sıralı ve sırasız olmak üzere 2 ye ayrılır--
+         
+         1.unorderedlsit ul ->sırasız listeler ul ile başlar
+        2. ordered listeler ol etiketi ile başlar
+        listelere eleman eklemek için "li" etiketi kullanılır
+        
+    -->
+        <ul><!-- düzensiz list-->
+        <li>Elma</li>
+        <li>Armut</li>
+        <li>Portakal</li>
+        </ul>
+        <ol>
+            <li>Matematik</li>
+            <li>Fizik</li>
+            <li>Kimya</li>
+            <li>Biyoloji</li>
+        </ol>
+</body>
+
+</html>
