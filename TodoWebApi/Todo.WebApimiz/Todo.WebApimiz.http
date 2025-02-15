@@ -1,0 +1,6 @@
+@Todo.WebApimiz_HostAddress = http://localhost:5232
+
+GET {{Todo.WebApimiz_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
