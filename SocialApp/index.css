@@ -1,0 +1,126 @@
+/*mesela burada . ile başlamamıs bu bir html tagı class değil*/
+nav
+{
+display: flex; /* felexbox kullnacaz*/
+padding:10px 20px; /* boşluk verdik üst alt ve sağm soldan*/
+justify-content:space-between; /*elmanlar arasına boşlukları hizalar*/
+align-items:center; /* yatauyda ortalma yaptık*/
+border:1px solid; /* tablo çizgiisi ekliyor -------------------  */
+border-radius:10px;
+background-color: #CFE2FF; /* ARKA PLAN RENGİ     */
+}
+nav ul{
+    display: flex; /* flexbox görünmü*/
+    list-style: none; /* liste işaretçilerini kaldıırır 1 2 3 4 gibi ...... gibi a a b c -ı -ııı -ıı gibi*/
+    gap:20px; /*   elemanlar arasına boşluk bırakma*/
+}
+nav h1{
+    cursor:pointer; /* bu üzerine geldiği zaman bir el işareti çıkartıyor yani tıklaanbilir hale getriiryor    */
+    user-select: none;; /* kullanıcının başlık üzerine metin secmesini engeller*/
+}
+/*  navigasyondaki li tagın içerisindekki elemntlere stil uyguluyoruz   */
+nav li{
+padding:1Opx; /* padding ile iç boşluk veriyoruz*/
+border:1px solid none;/* tabloya çizgi çizer fakat none yaptıgım için bana göstermez gizli bir sınır belirler */
+border-radius: 10px; /*   köşleeri yuvarlatır */
+cursor: pointer; /* mouse ile üzerine geldiğin zaman tılanabili hale egtirim el işareti gösterir    */
+}
+nav li:hover{
+
+    background-color: #9ec5fe; /* hover durumunda üzerine gelidğinde arka planı turkuaza ceviir*/
+    border-color: #9ec5fe; /*  uzerine gelşdiğinde hover durumunda tablonun sınır rengini çizgi renklerini belirler   */
+
+}
+/* classlara style uygularken clasın basına . işareti koyarız */
+.row::after{ /*  row sınıfından sonra gelen elemanları temizler */
+content: ''; /* bu dışarıdan içerik eklemey yarar*/
+clear:both;  /* elemanları temizler  */   
+display:table; /* içeriği table gorunume düzenler      */
+}
+/* row içerisindeki sol alanın genişlik ve eyreleşim ayarları     */
+.row .left{
+width: 20%; /* soldan yüzde 20 genişlik */
+float: left; /* sola yasla */
+}
+/* row içeriisndeki sağ tarafın genişlik ve eyrleşim ayarları*/
+.row .right{
+width: 70%; /* sağ tarafa yüzde 70 lik alan ayır   */
+float: right; /*  sağ rafa yasla   */
+}
+.avatar{
+    border-radius: 50px; /* köşelerden 50 px lik ovallaştır yuvarlat      */
+    width: 50px;      /*  50 px genişlik ver        */
+}
+.avatar2{
+    padding:150px; /* çerçevenin içinden 150 px boşluk bırak            */
+    border-radius:150px; /* 150 px lik borderleri yuvarlat      */ 
+}
+.profile{
+    padding: 10px; /* 10 px boşluk bırakır  */
+    text-align: center; /* metni ortalar  */ 
+    border: 1px solid;   /* border cizigisi çizer  */
+}/* . ile başlayanlar class oluyor*/
+.input{
+    padding: 10px; /*üstten alttan sağdan soldan 10 px bosluk bırak*/
+    width: 80%; /* yüzde 80 genişilik verdik*/
+    font-size: 20px; /*   yazı kalınlığı 20 piksel olsun   */
+    border-radius: 15px; /*  15 piksellik yuvarlatıyoruz          */
+
+}
+
+.mt-4{
+    margin-top:40px; /* elementin diğer elemnte olan uzaklık yukardan 40 piksellik boşluk */
+    
+}
+.f-left{
+    float: left; /* sol tarafa yasla float yaslama islemi yapar */
+}
+.f-right{
+    float:right; /*  sağ tarafa yasla  */
+}
+button{
+    width: 120px; /*  genişlik 120 px     */
+    padding: 7px;  /* bulunduug cerceveden iççerecden iç sınırdan 7 px bosluk    */
+    border-radius:10px; /*köşeleri yuvarlatıyordu */
+    border-color:none; /* sınır çizgisi rengini kaldııryor*/
+    background-color:transparent; /* arka plan rengini şefaf yapar        */
+    cursor: pointer;   /* üzerine gelince el işareti çıkartıyor tıklanacak alan oluşturuyor   */
+    margin-right: 10px; /* diğer dış elementlerden sağdan 10 px bosluk bırakıyor   */
+}
+/* hove rburada bir eventidr üzerine geldiğnde anlamında ornek olarak eventlere onclik double clik mouseover gibi seyler düşünebiliirz*/
+button:hover {
+    scale: 1.1; /*bu boyutu yüzde 10 büyüüt */
+}
+.shadow{
+    border-radius: 10px; /*  köşeleri 10 px yuvarlat  */
+    border:1px solid; /* kenarlık ekle 1 pikselli düz çizgi çiz   */
+    box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 3px 10px 0 rgba(0,0,0,0.19) /* Gölgeleme efektini ekler */
+}
+.show-post{
+    width: 80%; /* genişlik yüzde 80 olsun   */
+    padding: 10px; /*soldan içten boşluk ekler  */
+}
+
+.w-90{
+    width: 90%; /*  genişiliği yüzde 90 yap   */
+}
+.mt-1{
+    margin-top: 5px;; /* üstten 5 piksellik bosluk bırak */
+}
+
+.mt-2{
+    margin-top: 20px; /* üstten 20 piksellik boşluk bırak */
+}
+.mt-15{
+    margin-top: 15px; /* üstten 15 piksellik bosluk bırak*/
+}
+
+.d-flex{
+    display: flex; /*  flexbox düzxeni yap    */
+}
+.align-items-center{
+    align-items:center; /* yatay olarak ortala aynı satırda hizalansın */
+}
+.g-1{
+    gap:10px; /* 10 piksellik boşluk ver */
+}
